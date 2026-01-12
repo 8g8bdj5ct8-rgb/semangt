@@ -4,22 +4,27 @@ const button = document.querySelectorAll(".content button");
 const ctn = document.querySelector(".content");
 
 // --- PENGATURAN NOMOR WA & PESAN ---
-const nomorWA = "6282292822610"; 
+const nomorWA = "6282292822610";
 const pesanWA = "Hai Incess, i justt want to say keep spirit for today nah. its okay if you need some space, yang penting disana baik baikji dsna! . I'll be always waiting you ✨ (pesan rahasia ini jdi klo sdh di baca hapusmi saja ! 🤫😋)";
 
 function clik(btn) {
   if (btn.textContent == "Iya 🤗") {
-    // 1. Matikan musik saat masuk ke WA
+    // 1. Matikan musik
     const msk = document.getElementById("lagu");
     msk.pause();
 
-    // 2. Ubah tampilan
+    // 2. Ubah tampilan website
     img.src = "malu.gif";
     kata.textContent = "😍 ni buat si comel Incess 🍊";
     
-    // 3. Arahkan ke WhatsApp
-    window.location.href = `https://api.whatsapp.com/send?phone=${nomorWA}&text=${encodeURIComponent(pesanWA)}`;
+    // 3. LOGIKA PINDAH WA (Gunakan window.open jika window.location gagal)
+    const urlWA = "https://api.whatsapp.com/send?phone=" + nomorWA + "&text=" + encodeURIComponent(pesanWA);
     
+    // Mencoba pindah secara otomatis
+    setTimeout(function() {
+        window.location.assign(urlWA);
+    }, 500);
+
   } else {
     img.src = "patahHati.gif";
     kata.textContent = "😭😭😭😭😭😭";
@@ -35,7 +40,7 @@ function content() {
   ctn.style.display = "flex";
   ctn.style.width = "300px";
   ctn.style.height = "400px";
-  kata.textContent = "Hay Incess, cuma mau ucapin, semangat ya 😊"; 
+  kata.textContent = "Hay Incess, cuma mau ucapin, semangat ya 😊";
 }
 
 function pesanHilang() {
