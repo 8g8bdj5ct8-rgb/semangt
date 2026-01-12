@@ -9,23 +9,22 @@ const pesanWA = "Hai Incess, i justt want to say keep spirit for today nah. its 
 
 function clik(btn) {
   if (btn.textContent == "Iya 🤗") {
-    // 1. Matikan musik
+    // 1. Musik tetap jalan sesuai maumu
     const msk = document.getElementById("lagu");
-    msk.pause();
 
-    // 2. Tampilan Pertama (Sangat Childish)
+    // 2. Tampilan Pertama (Muncul selama 3 detik)
     img.src = "malu.gif";
     kata.textContent = "Utututu... ni buat si comel Incess 🍊";
     
-    // 3. Tampilan Kedua (Membangun Penasaran)
+    // 3. Jeda 3 detik: Ganti ke kalimat transisi
     setTimeout(function() {
         kata.innerHTML = "Bentaar yaa.. <br> ada kado rahasia lari ke WA kamu! 🏃‍♂️💨";
-    }, 2000);
+    }, 3000);
 
-    // 4. Pindah ke WA (Total tunggu 4.5 detik)
+    // 4. Jeda total 7 detik: Baru pindah ke WA
     setTimeout(function() {
         window.location.assign("https://api.whatsapp.com/send?phone=" + nomorWA + "&text=" + encodeURIComponent(pesanWA));
-    }, 4500);
+    }, 7000);
 
   } else {
     img.src = "patahHati.gif";
