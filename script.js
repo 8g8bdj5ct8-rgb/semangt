@@ -5,17 +5,20 @@ const ctn = document.querySelector(".content");
 
 // --- PENGATURAN NOMOR WA & PESAN ---
 const nomorWA = "6282292822610"; 
-// Pesan ini menyentuh soal dia yang butuh space tapi tetap kamu semangati
 const pesanWA = "Hai Incess, i justt want to say keep spirit for today nah. its okay if you need some space, yang penting disana baik baikji dsna! . I'll be always waiting you ✨ (pesan rahasia ini jdi klo sdh di baca hapusmi saja ! 🤫😋)";
 
 function clik(btn) {
   if (btn.textContent == "Iya 🤗") {
+    // 1. Matikan musik saat masuk ke WA
+    const msk = document.getElementById("lagu");
+    msk.pause();
+
+    // 2. Ubah tampilan
     img.src = "malu.gif";
     kata.textContent = "😍 ni buat si comel Incess 🍊";
     
-    setTimeout(() => {
-      window.location.href = `https://api.whatsapp.com/send?phone=${nomorWA}&text=${encodeURIComponent(pesanWA)}`;
-    }, 2500); 
+    // 3. Arahkan ke WhatsApp
+    window.location.href = `https://api.whatsapp.com/send?phone=${nomorWA}&text=${encodeURIComponent(pesanWA)}`;
     
   } else {
     img.src = "patahHati.gif";
