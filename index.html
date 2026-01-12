@@ -5,16 +5,42 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Special for Incess ✨</title>
   <style>
-    body { margin: 0; display: flex; justify-content: center; align-items: center; height: 100vh; background: #ffdde1; font-family: Arial, sans-serif; overflow: hidden; }
-    .bg { text-align: center; }
-    .pesan img { width: 130px; cursor: pointer; animation: bounce 1.5s infinite; }
-    .content { display: none; background: white; padding: 30px; border-radius: 25px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); flex-direction: column; align-items: center; width: 280px; }
-    .content img { width: 150px; border-radius: 15px; }
-    .kata { font-weight: bold; color: #d81b60; margin: 20px 0; }
-    button { padding: 12px 25px; border: none; border-radius: 50px; cursor: pointer; font-weight: bold; }
+    body {
+      margin: 0; padding: 0;
+      display: flex; justify-content: center; align-items: center;
+      min-height: 100vh; background: #ffdde1; 
+      font-family: 'Arial', sans-serif; overflow: hidden;
+    }
+    .bg {
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      text-align: center; width: 100%;
+    }
+    .pesan {
+      cursor: pointer; display: flex; flex-direction: column; align-items: center;
+    }
+    .pesan img { width: 150px; margin-bottom: 10px; animation: bounce 1.5s infinite; }
+    .pesan span { font-weight: bold; color: #d81b60; font-size: 1.1rem; }
+    
+    .content {
+      display: none; background: white; padding: 30px; border-radius: 25px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1); flex-direction: column;
+      align-items: center; width: 280px; position: relative;
+    }
+    .content img { width: 150px; border-radius: 15px; margin-bottom: 15px; }
+    .kata { font-weight: bold; color: #d81b60; font-size: 1rem; margin-bottom: 20px; }
+    
+    .btn-group { display: flex; gap: 15px; width: 100%; justify-content: center; }
+    button {
+      padding: 10px 25px; border: none; border-radius: 50px;
+      cursor: pointer; font-weight: bold; font-size: 14px; transition: 0.3s;
+    }
     .iya { background: #ff4081; color: white; }
     .enggak { background: #fce4ec; color: #ad1457; position: absolute; }
-    @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
   </style>
 </head>
 <body onmouseover="fullLayar()">
