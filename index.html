@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Spesial Buat Incess ✨</title>
+  
+  <style>
+    /* CSS TEMA PINK PASTEL */
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(135deg, #ffdde1, #ee9ca7); /* Gradasi Pink */
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      overflow: hidden;
+    }
+
+    .bg {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Gaya Amplop Awal */
+    .pesan {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .pesan img {
+      width: 130px;
+      filter: drop-shadow(0 5px 15px rgba(255, 105, 180, 0.4));
+      animation: bounce 1.5s infinite;
+    }
+
+    .pesan span {
+      margin-top: 15px;
+      font-weight: bold;
+      color: #d81b60;
+      text-shadow: 1px 1px 2px white;
+      opacity: 0.8;
+    }
+
+    /* Kotak Konten Utama */
+    .content {
+      display: none; /* Sembunyi sampai amplop diklik */
+      background: rgba(255, 255, 255, 0.9);
+      padding: 30px;
+      border-radius: 25px;
+      border: 3px solid #ffb6c1;
+      box-shadow: 0 10px 30px rgba(216, 27, 96, 0.2);
+      flex-direction: column;
+      align-items: center;
+      width: 300px;
+      transition: all 0.3s ease;
+    }
+
+    .content img {
+      width: 150px;
+      border-radius: 15px;
+    }
+
+    .kata {
+      font-size: 1.1rem;
+      color: #c2185b;
+      font-weight: bold;
+      line-height: 1.5;
+      margin: 20px 0;
+    }
+
+    /* Tombol Interaktif */
+    .btn-group {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      width: 100%;
+    }
+
+    button {
+      padding: 12px 25px;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .iya {
+      background: #ff4081;
+      color: white;
+      box-shadow: 0 4px 15px rgba(255, 64, 129, 0.4);
+    }
+
+    .enggak {
+      background: #fce4ec;
+      color: #ad1457;
+      position: relative; /* Penting untuk fitur menghindar */
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+  </style>
+</head>
+
+<body onmouseover="fullLayar()">
+  
+  <audio src="lagu/lagu.mp3" id="lagu"></audio>
+
+  <div class="bg">
+    <div class="pesan" onclick="pesanHilang()">
+      <img src="img/pesan.png" alt="Pesan">
+      <span>Klik untuk membuka pesan ✨</span>
+    </div>
+
+    <div class="content">
+      <img src="img/kaku.webp" alt="Stiker" class="kado">
+      <p class="kata"></p>
+      <div class="btn-group">
+        <button class="iya" onclick="clik(this)">Iya 🤗</button>
+        <button class="enggak" id="btnEnggak" onclick="clik(this)">Enggak 🤪</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
