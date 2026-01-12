@@ -13,17 +13,19 @@ function clik(btn) {
     const msk = document.getElementById("lagu");
     msk.pause();
 
-    // 2. Ubah tampilan website
+    // 2. Tampilan Pertama (Sangat Childish)
     img.src = "malu.gif";
-    kata.textContent = "😍 ni buat si comel Incess 🍊";
+    kata.textContent = "Utututu... ni buat si comel Incess 🍊";
     
-    // 3. LOGIKA PINDAH WA (Gunakan window.open jika window.location gagal)
-    const urlWA = "https://api.whatsapp.com/send?phone=" + nomorWA + "&text=" + encodeURIComponent(pesanWA);
-    
-    // Mencoba pindah secara otomatis
+    // 3. Tampilan Kedua (Membangun Penasaran)
     setTimeout(function() {
-        window.location.assign(urlWA);
-    }, 500);
+        kata.innerHTML = "Bentaar yaa.. <br> ada kado rahasia lari ke WA kamu! 🏃‍♂️💨";
+    }, 2000);
+
+    // 4. Pindah ke WA (Total tunggu 4.5 detik)
+    setTimeout(function() {
+        window.location.assign("https://api.whatsapp.com/send?phone=" + nomorWA + "&text=" + encodeURIComponent(pesanWA));
+    }, 4500);
 
   } else {
     img.src = "patahHati.gif";
