@@ -3,13 +3,29 @@ const kata = document.querySelector(".content .kata");
 const button = document.querySelectorAll(".content button");
 const ctn = document.querySelector(".content");
 
+// --- PENGATURAN NOMOR WA & PESAN ---
+const nomorWA = "6282292822610"; 
+// Pesan ini menyentuh soal dia yang butuh space tapi tetap kamu semangati
+const pesanWA = "Hai Incess, i justt want to say keep spirit for today nah. its okay if you need some space, yang penting disana baik baikji dsna! . I'll be always waiting you ✨ (pesan rahasia ini jdi klo sdh di baca hapusmi saja ! 🤫😋)";
+
 function clik(btn) {
-  btn.textContent == "Iya 🤗" ? (img.src = "malu.gif") : (img.src = "patahHati.gif");
+  if (btn.textContent == "Iya 🤗") {
+    img.src = "malu.gif";
+    kata.textContent = "😍 ni buat si comel Incess 🍊";
+    
+    setTimeout(() => {
+      window.location.href = `https://api.whatsapp.com/send?phone=${nomorWA}&text=${encodeURIComponent(pesanWA)}`;
+    }, 2500); 
+    
+  } else {
+    img.src = "patahHati.gif";
+    kata.textContent = "😭😭😭😭😭😭";
+  }
+  
   button[0].style.display = "none";
   button[1].style.display = "none";
   ctn.style.height = "250px";
   ctn.style.width = "270px";
-  return btn.textContent == "Iya 🤗" ? (kata.textContent = "😍 ni buat si comel Incess 🍊") : (kata.textContent = "😭😭😭😭😭😭");
 }
 
 function content() {
